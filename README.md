@@ -37,4 +37,47 @@ Leave the case "Active Provider?" checked.
 
 Leave the case "Is this the default provider?" checked.
 
+## Message body
+To integrate with whati templates I included custom template form:
 
+```
+[[template_name]]
+[[broadcast_name]]
+{{par_01===variable 1}}
+{{par_02===variable content}}
+```
+```template_name``` - whati template name (required)
+
+```broadcast_name``` - whati broadcast name(optional)
+
+```par_01``` - parameter name
+
+```===``` - separator between parameter name and variable.(required)
+
+``variable 1`` - content of parameter
+
+For example: 
+
+whati template name: ```woocommerce_default_follow_up_v1```
+
+```
+Dear {{name}}, this is {{shop_name}}.
+
+If you have any questions, please feel free to let me know, you can talk to our consultants here on Whatsapp where they will be able to guide you through any requests.
+Thanks.
+```
+
+bosy of outbound SMS must be:
+
+```
+[[woocommerce_default_follow_up_v1]]
+{{name===Mr. Simon}}
+{{shop_name===Gig market}}
+```
+and reciver will get:
+```
+Dear Mr. Simon, this is Gig market.
+
+If you have any questions, please feel free to let me know, you can talk to our consultants here on Whatsapp where they will be able to guide you through any requests.
+Thanks.
+```
