@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/provider</path>
+    <page_callback>CRM_Whati_Page_Whati</page_callback>
+    <title>Whati</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
